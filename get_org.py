@@ -20,3 +20,8 @@ response = requests.get(url, headers=headers).json()
 
 print(json.dumps(response, indent=2, sort_keys=True))
 
+for response_org in response:
+    if response_org['name'] == 'DevNet Sandbox':
+        orgId = response_org['id']
+
+print(orgId)
